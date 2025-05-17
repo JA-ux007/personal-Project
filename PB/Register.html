@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="MyWebsite.css">
+    <link rel="stylesheet" href="Register.css">
+</head>
+<body>
+    <div class="register-cointainer">
+    <h2>Create Account</h2>
+    <form id="createAccountForm">
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Enter your full name">
+            <p id="fullNameError" class="error-message">Please enter your full name</p>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <p id="emailError" class="error-message">Please enter a valid email address</p>
+        </div>
+        
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Choose a username (at least 4 characters)">
+            <p id="usernameError" class="error-message">Username must be at least 4 characters long</p>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Create a password (at least 8 characters)">
+            <p id="passwordError" class="error-message">Password must be at least 8 characters long</p>
+        </div>
+        
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password">
+            <p id="confirmPasswordError" class="error-message">Passwords do not match</p>
+        </div>
+        
+        
+        <button type="submit">Create Account</button>
+    </form>
+         <div class="create-account">
+            <p>Already have a account?<a href="MyWebsite.html">Sign in here</a></p>
+        </div>
+    </div>
+
+    <script src="Register.js"></script>
+</body>
+</html>
