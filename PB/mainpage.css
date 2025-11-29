@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: auto; 
+    box-sizing: border-box;
+    flex-direction: column; /* Added to stack header and navigation bar vertically */
+}
+header {
+    background-image: url('19776829-papeis-de-parede.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    text-align: center;
+    width: 100%; /* Ensures header spans full width */
+}
+header img {
+    max-width: 50%;
+    height: 50px;
+}
+.navigation-bar { 
+    background-color: #111; 
+    width: 800%; 
+    max-width: 1440px; 
+    border-radius: 8px;
+    padding: 0 10px;
+    box-shadow: 0 4px 15px rgba(0, 224, 255, 0.1);
+}
+.navigation-bar ul { 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: space-around; 
+}
+
+        /* Nav Item Styles */
+        .navigation-bar ul li {
+            position: relative; 
+            display: block;
+            flex: 1; 
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Link/Icon Container - Pahabaan ang Navigation Bar */
+        .navigation-bar ul li a {
+            /* 🌟 BASE HEIGHT: Mataas na padding para mahaba na agad ang nav bar */
+            padding: 20px 5px; 
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+
+        /* ICON Style */
+        .navigation-bar ul li a i {
+            font-size: 24px;
+            /* Hindi na kailangan ng margin-bottom, dahil ang label ang nagfa-fade in */
+            transition: 0.25s ease;
+        }
+
+        /* 🌟 FIX 1: Name Label (Nakatago sa simula) */
+        .nav-label {
+            color: #ccc;
+            font-size: 12px;
+            text-transform: uppercase;
+            
+            /* Tiyakin na nakatago sa simula */
+            opacity: 0;
+            height: 0; /* Para hindi kumain ng espasyo */
+            margin-top: 0;
+            transition: opacity 0.3s, height 0.3s, margin 0.3s;
+        }
+        
+        /* 🌟 FIX 2: Name Label (Lalabas on Hover) */
+        .navigation-bar ul li:hover .nav-label {
+            opacity: 1;
+            height: auto; /* Para lumabas at kumain ng espasyo */
+            margin-top: 5px; /* Space sa pagitan ng icon at text */
+            color: #00d0ff;
+            text-shadow: 0 0 8px #00e5ff, 0 0 15px #00e5ff;
+        }
+        
+        /* ICON ON HOVER (Neon color effect) */
+        .navigation-bar ul li:hover a i {
+            color: #00d0ff;
+            transform: scale(1.1);
+            text-shadow: 0 0 8px #00e5ff, 0 0 15px #00e5ff;
+        }
+        
+        /* ====================================
+           UNDERLINE ANIMATION
+           ==================================== */
+        .underline {
+            position: absolute;
+            bottom: 0; 
+            left: 50%;
+            height: 3px;
+            width: 0;
+            background: #00eaff;
+            border-radius: 4px;
+            box-shadow: 0 0 8px #00eaff;
+            transition: 0.35s cubic-bezier(.34,1.56,.64,1);
+            opacity: 0;
+            transform: translateX(-50%);
+        }
+
+        /* UNDERLINE ANIMATION */
+        .navigation-bar ul li:hover .underline {
+            width: 80%;
+            opacity: 1;
+        }
+                @media screen and (max-width: 600px) {
+            
+            /* Vertical Layout */
+            .navigation-bar ul {
+                flex-direction: column; 
+            }
+
+            .navigation-bar ul li {
+                width: 100%; 
+                border-bottom: 1px solid #333; 
+            }
+            
+            /* Horizontal Icon and Name */
+            .navigation-bar ul li a {
+                flex-direction: row; 
+                justify-content: flex-start; 
+                padding: 12px 20px; 
+            }
+
+            /* Adjust space between icon and name in mobile */
+            .navigation-bar ul li a i {
+                margin-bottom: 0; 
+                margin-right: 15px; 
+            }
+            
+            /* Name on Mobile */
+            .nav-label {
+                font-size: 14px; /* Bahagyang mas malaki */
+            }
+
+            /* Itago ang underline animation sa mobile */
+            .underline {
+                display: none;
+            }
+        }
